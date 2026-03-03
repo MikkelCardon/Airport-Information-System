@@ -2,11 +2,11 @@
 
 namespace SystemIntegration_project.Services.Middleware;
 
-public class AfterEndpointMiddleware
+public class AfterEndpointPrintMiddleware
 {
     private readonly RequestDelegate _next;
 
-    public AfterEndpointMiddleware(RequestDelegate next)
+    public AfterEndpointPrintMiddleware(RequestDelegate next)
     {
         _next = next;
     }
