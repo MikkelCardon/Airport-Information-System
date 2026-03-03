@@ -1,5 +1,6 @@
 ﻿using System.Text;
 using System.Text.Json;
+using Models;
 using SystemIntegration_project.Database;
 using SystemIntegration_project.Models;
 using RabbitMQ.Client;

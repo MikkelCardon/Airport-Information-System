@@ -1,4 +1,6 @@
-﻿namespace SystemIntegration_project.Models;
+﻿using Models;
+
+namespace SystemIntegration_project.Models;
 
 public class TopicSpecifications
 {

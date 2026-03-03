@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Models;
 using SystemIntegration_project.Models;
 
 namespace SystemIntegration_project.Database;

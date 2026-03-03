@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using Microsoft.EntityFrameworkCore;
 
-namespace SystemIntegration_project.Models;
+namespace Models;
 
 public class FlightInfo
 {
@@ -19,7 +18,11 @@ public class FlightInfo
         Departed,
         Cancelled
     }
-    
+
+    public FlightInfo()
+    {
+    }
+
     public FlightInfo(string flightNumber, string destination, DateTime departureTime, string gate, string status)
     {
         FlightNumber = flightNumber;

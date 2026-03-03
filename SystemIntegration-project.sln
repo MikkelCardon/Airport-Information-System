@@ -2,6 +2,12 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemIntegration-project", "SystemIntegration-project\SystemIntegration-project.csproj", "{92B0EA10-08C4-47F9-A6CD-40C2B763E704}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FlightInfoScreen", "FlightInfoScreen", "{52CE99AB-45E2-442F-AF66-0E2BF3EF214C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{567E8D0D-9875-4AF8-9E45-D071AD9A4F37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightInfoScreen", "FlightInfoScreen\FlightInfoScreen\FlightInfoScreen.csproj", "{E5F1032F-5F3D-4FF3-A6F8-96F92DD9FBF7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +18,16 @@ Global
 		{92B0EA10-08C4-47F9-A6CD-40C2B763E704}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{92B0EA10-08C4-47F9-A6CD-40C2B763E704}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{92B0EA10-08C4-47F9-A6CD-40C2B763E704}.Release|Any CPU.Build.0 = Release|Any CPU
+		{567E8D0D-9875-4AF8-9E45-D071AD9A4F37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{567E8D0D-9875-4AF8-9E45-D071AD9A4F37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{567E8D0D-9875-4AF8-9E45-D071AD9A4F37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{567E8D0D-9875-4AF8-9E45-D071AD9A4F37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5F1032F-5F3D-4FF3-A6F8-96F92DD9FBF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5F1032F-5F3D-4FF3-A6F8-96F92DD9FBF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5F1032F-5F3D-4FF3-A6F8-96F92DD9FBF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5F1032F-5F3D-4FF3-A6F8-96F92DD9FBF7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E5F1032F-5F3D-4FF3-A6F8-96F92DD9FBF7} = {52CE99AB-45E2-442F-AF66-0E2BF3EF214C}
 	EndGlobalSection
 EndGlobal
