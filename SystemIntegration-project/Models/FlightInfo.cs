@@ -1,7 +1,11 @@
-﻿namespace SystemIntegration_project.Models;
+﻿using System.ComponentModel.DataAnnotations;
+using Microsoft.EntityFrameworkCore;
+
+namespace SystemIntegration_project.Models;
 
 public class FlightInfo
 {
+    [Key]
     public string FlightNumber { get; set; }
     public string Destination { get; set; }
     public DateTime DepartureTime { get; set; }

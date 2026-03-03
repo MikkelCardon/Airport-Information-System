@@ -21,12 +21,38 @@ namespace SystemIntegration_project.Controllers
         {
             _flightContext.flights.Add(flightInfo);
             _flightContext.SaveChanges();
-            
-            _flightContext.PrintFlights();
 
             return flightInfo;
         }
-        
+
+        [HttpPut("{flightNumber}")]
+        public async Task<ActionResult<FlightInfo>> Update(string flightNumber, [FromBody] FlightInfo flightInfo)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            
+            if (flightNumber != flightInfo.FlightNumber)
+            {
+                return BadRequest("FlightNumber in route and body do not match. :(");
+            }
+
+            FlightInfo flight = await _flightContext.flights.FindAsync(flightNumber);
+            if (flight == null)
+            {
+                return NotFound($"Flight {flightNumber} not found.");
+            }
+
+            flight.Destination = flightInfo.Destination;
+            flight.DepartureTime = flightInfo.DepartureTime;
+            flight.Gate = flightInfo.Gate;
+            flight.Status = flightInfo.Status;
+
+            await _flightContext.SaveChangesAsync();
+                
+            return flightInfo;
+        }
         
     }
 }
