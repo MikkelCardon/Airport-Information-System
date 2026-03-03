@@ -1,7 +1,9 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Models;
 using SystemIntegration_project.Database;
 using SystemIntegration_project.Models;
+using SystemIntegration_project.Services;
 
 namespace SystemIntegration_project.Controllers
 {
@@ -10,15 +12,27 @@ namespace SystemIntegration_project.Controllers
     public class FlightController : ControllerBase
     {
         private readonly FlightContext _flightContext;
+        private readonly FlightInfoCreater _flightInfoCreater;
         
-        public FlightController(FlightContext flightContext)
+        public FlightController(FlightContext flightContext, FlightInfoCreater flightInfoCreater)
         {
             _flightContext = flightContext;
+            _flightInfoCreater = flightInfoCreater;
         }
         
         [HttpPost]
         public ActionResult<FlightInfo> Create([FromBody] FlightInfo flightInfo)
         {
+            _flightContext.flights.Add(flightInfo);
+            _flightContext.SaveChanges();
+
+            return flightInfo;
+        }
+        
+        [HttpPost("random")]
+        public ActionResult<FlightInfo> RandomCreate()
+        {
+            FlightInfo flightInfo = _flightInfoCreater.GenerateRandomFlight();
             _flightContext.flights.Add(flightInfo);
             _flightContext.SaveChanges();
 

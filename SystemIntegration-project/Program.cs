@@ -2,6 +2,7 @@ using SystemIntegration_project.Database;
 using Microsoft.EntityFrameworkCore;
 using RabbitMQ.Client;
 using SystemIntegration_project.Models;
+using SystemIntegration_project.Services;
 using SystemIntegration_project.Services.Middleware;
 
 namespace SystemIntegration_project;
@@ -16,6 +17,7 @@ public class Program
         builder.Services.AddControllers();
         builder.Services.AddAuthorization();
 
+        builder.Services.AddSingleton<FlightInfoCreater>();
         builder.Services.AddDbContext<FlightContext>(op => op.UseInMemoryDatabase("FlightDb"));
         builder.Services.AddSingleton<TopicSpecifications>(_ =>
         {
@@ -29,7 +31,7 @@ public class Program
             );
             specs.TopicSpecificationsList.Add(
                 new TopicSpecifications.TopicSpecification(
-                    topicName: "new_Flights",
+                    topicName: "New_Flights",
                     exchangeName: "flightInfo",
                     filter: f => f.DepartureTime > DateTime.Now
                 )
